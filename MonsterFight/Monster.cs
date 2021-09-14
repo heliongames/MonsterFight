@@ -29,14 +29,14 @@ namespace MonsterFight
             if ((_enemy.HitPoint - _dmg) > 0)
             {
                 _enemy.HitPoint = _enemy.HitPoint - _dmg;
-                Console.WriteLine(Tools.IntToRace(_enemy.Race) + " still have " + _enemy.HitPoint + " hit points left");
+                Console.WriteLine(Tools.IntToRace(_enemy.Race) + " still have " + _enemy.HitPoint + " hit points left\n");
                 DidAttack = true;
             }
             else
             {
                 _enemy.HitPoint = 0;
                 Console.WriteLine(Tools.IntToRace(_enemy.Race) + " is dead!");
-                Console.WriteLine(Tools.IntToRace(Race) + " win this fight!");
+                Console.WriteLine("\n" + Tools.IntToRace(Race) + " win this fight!");
             }
         }
 

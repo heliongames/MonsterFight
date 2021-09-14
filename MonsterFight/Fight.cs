@@ -48,7 +48,7 @@ namespace MonsterFight
                 firstMoster.DidAttack = false;
                 secondMoster.DidAttack = false;
             }
-            Console.WriteLine("\nRound "+rounds+ " fight: \n");
+            Console.WriteLine("\nRound "+rounds+ " fight:");
             if(firstMoster.Speed > secondMoster.Speed)
             {
                 if (!firstMoster.DidAttack)
@@ -111,7 +111,6 @@ namespace MonsterFight
             {
                 Console.WriteLine("Invalid input, Enter only number");
                 ReadConsole();
-
             }
         }
     }
