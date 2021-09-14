@@ -78,7 +78,7 @@ namespace MonsterFight
             } 
             else
             {
-                Console.WriteLine("Fight is over. It's take " + rounds + " rounds");
+                Console.Write(" It's take " + rounds + " rounds\n\n");
             }
         }
 

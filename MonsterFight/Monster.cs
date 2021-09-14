@@ -36,7 +36,7 @@ namespace MonsterFight
             {
                 _enemy.HitPoint = 0;
                 Console.WriteLine(Tools.IntToRace(_enemy.Race) + " is dead!");
-                Console.WriteLine("\n" + Tools.IntToRace(Race) + " win this fight!");
+                Console.Write("\n" + Tools.IntToRace(Race) + " win this fight!");
             }
         }
 
