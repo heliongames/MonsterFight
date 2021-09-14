@@ -73,6 +73,7 @@ namespace MonsterFight
             }
             if(firstMoster.HitPoint > 0 && secondMoster.HitPoint > 0)
             {
+                System.Threading.Thread.Sleep(500);
                 DoFight();
             } 
             else
