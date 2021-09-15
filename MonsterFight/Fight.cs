@@ -83,6 +83,7 @@ namespace MonsterFight
                 Console.Write(" It's took " + rounds + " rounds\n\n");
                 Console.Beep(1000, 1000);
                 Console.ResetColor();
+                Console.ReadKey();
             }
         }
 
