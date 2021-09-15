@@ -48,7 +48,9 @@ namespace MonsterFight
                 firstMoster.DidAttack = false;
                 secondMoster.DidAttack = false;
             }
-            Console.WriteLine("\nRound "+rounds+ " fight:");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\nROUND "+rounds+ ":");
+            Console.ResetColor();
             if(firstMoster.Speed > secondMoster.Speed)
             {
                 if (!firstMoster.DidAttack)
@@ -78,7 +80,9 @@ namespace MonsterFight
             } 
             else
             {
-                Console.Write(" It's take " + rounds + " rounds\n\n");
+                Console.Write(" It's took " + rounds + " rounds\n\n");
+                Console.Beep(1000, 1000);
+                Console.ResetColor();
             }
         }
 
@@ -93,13 +97,13 @@ namespace MonsterFight
                     if (firstMoster.Race == 0)
                     {
                         firstMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
-                        Console.WriteLine($"First monter race is: {Tools.Races[firstMoster.Race - 1]}\n");
+                        Console.WriteLine($"First monster race is: {Tools.Races[firstMoster.Race - 1]}\n");
                         Tools.Races.RemoveAt(_race-1);
                     }
                     else
                     {
                         secondMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
-                        Console.WriteLine($"Second monter race is: {Tools.Races[_race - 1]}\n");
+                        Console.WriteLine($"Second monster race is: {Tools.Races[_race - 1]}\n");
                     }
                 }
                 else
@@ -110,7 +114,7 @@ namespace MonsterFight
             }
             else
             {
-                Console.WriteLine("Invalid input, Enter only number");
+                Console.WriteLine("Invalid input, please enter only number");
                 ReadConsole();
             }
         }

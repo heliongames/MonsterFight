@@ -12,7 +12,7 @@ namespace MonsterFight
         public float DefencePoint = 0f;
         public float Speed = 0f;
         public bool DidAttack;
-        static Random random = new Random();
+        Random random = new Random();
 
         public void GenerateMonsterStats()
         {
@@ -25,17 +25,27 @@ namespace MonsterFight
         public void Attack(Monster _enemy)
         {
             float _dmg = CalculateDamage(_enemy);
-            Console.WriteLine(Tools.IntToRace(Race) + " did attack " + Tools.IntToRace(_enemy.Race) + " and hit him with " + _dmg + " damage points");
+            Console.Beep();
+            Console.Write(Tools.IntToRace(Race) + " did attack " + Tools.IntToRace(_enemy.Race) + " and hit him with ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("[" + _dmg + "]");
+            Console.ResetColor();
+            Console.Write(" damage points\n");
             if ((_enemy.HitPoint - _dmg) > 0)
             {
                 _enemy.HitPoint = _enemy.HitPoint - _dmg;
-                Console.WriteLine(Tools.IntToRace(_enemy.Race) + " still have " + _enemy.HitPoint + " hit points left\n");
+                Console.Write(Tools.IntToRace(_enemy.Race) + " still have ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("[" + _enemy.HitPoint + "]");
+                Console.ResetColor();
+                Console.Write(" hit points left\n");
                 DidAttack = true;
             }
             else
             {
                 _enemy.HitPoint = 0;
                 Console.WriteLine(Tools.IntToRace(_enemy.Race) + " is dead!");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write("\n" + Tools.IntToRace(Race) + " win this fight!");
             }
         }
