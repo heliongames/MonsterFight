@@ -8,6 +8,12 @@ namespace MonsterFight
     class Tools
     {
         public static List<string> Races = new List<string> { "Orc", "Goblin", "Troll" };
+        
+        /// <summary>
+        /// Convert race name to array id 
+        /// </summary>
+        /// <param name="_race"></param> Race in text
+        /// <returns></returns> Array id
         public static int RaceToInt(string _race)
         {
             int id = 0;
@@ -22,7 +28,11 @@ namespace MonsterFight
             }
             return id;
         }
-
+        /// <summary>
+        /// Convert array id to race name
+        /// </summary>
+        /// <param name="_id"></param> Array id
+        /// <returns></returns> Race name
         public static string IntToRace(int _id)
         {
             string _race = "";

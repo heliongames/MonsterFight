@@ -21,7 +21,10 @@ namespace MonsterFight
             DefencePoint = random.Next(1, 5);
             Speed = random.Next(1, 5);
         }
-
+        /// <summary>
+        /// Do monster attack
+        /// </summary>
+        /// <param name="_enemy"></param> Enemy monster to attack
         public void Attack(Monster _enemy)
         {
             float _dmg = CalculateDamage(_enemy);
@@ -49,7 +52,11 @@ namespace MonsterFight
                 Console.Write("\n" + Tools.IntToRace(Race) + " win this fight!");
             }
         }
-
+        /// <summary>
+        /// Damage calculator
+        /// </summary>
+        /// <param name="_enemy"></param> Enemy monster
+        /// <returns></returns> Returns damage to enemy monster
         private float CalculateDamage(Monster _enemy)
         {
             float _damage = 0;
