@@ -89,35 +89,38 @@ namespace MonsterFight
 
         private static void ReadConsole()
         {
-            string _consoleInput = Console.ReadLine();
-            int _race;
-            if (Int32.TryParse(_consoleInput, out _race))
+            do
             {
-                if (_race <= Tools.Races.Count)
+                string _consoleInput = Console.ReadLine();
+                int _race;
+                if (Int32.TryParse(_consoleInput, out _race))
                 {
-                    if (firstMoster.Race == 0)
+                    if (_race <= Tools.Races.Count)
                     {
-                        firstMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
-                        Console.WriteLine($"First monster race is: {Tools.Races[firstMoster.Race - 1]}\n");
-                        Tools.Races.RemoveAt(_race-1);
+                        if (firstMoster.Race == 0)
+                        {
+                            firstMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
+                            Console.WriteLine($"First monster race is: {Tools.Races[firstMoster.Race - 1]}\n");
+                            Tools.Races.RemoveAt(_race - 1);
+                            break;
+                        }
+                        else
+                        {
+                            secondMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
+                            Console.WriteLine($"Second monster race is: {Tools.Races[_race - 1]}\n");
+                            break;
+                        }
                     }
                     else
                     {
-                        secondMoster.Race = Tools.RaceToInt(Tools.Races[_race - 1]);
-                        Console.WriteLine($"Second monster race is: {Tools.Races[_race - 1]}\n");
+                        Console.WriteLine("Please select available race!");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Please select available race!");
-                    ReadConsole();
+                    Console.WriteLine("Invalid input, please enter only number");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Invalid input, please enter only number");
-                ReadConsole();
-            }
+            } while (true);
         }
     }
 }
